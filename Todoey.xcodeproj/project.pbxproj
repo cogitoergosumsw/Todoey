@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CD3DB9CF20BEC5EF001B613A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3DB9CE20BEC5EF001B613A /* LaunchScreen.storyboard */; };
-		CD491E8820BF9324001B5C8C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD491E8720BF9324001B5C8C /* Item.swift */; };
+		CD462D2E20BFEFC400EF9379 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD462D2C20BFEFC400EF9379 /* DataModel.xcdatamodeld */; };
+		CD51354220C01C6A0095B412 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD51354120C01C6A0095B412 /* CategoryViewController.swift */; };
 		CD99D9C920BE94FB00A45569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD99D9C820BE94FB00A45569 /* AppDelegate.swift */; };
 		CD99D9CB20BE94FB00A45569 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD99D9CA20BE94FB00A45569 /* ToDoListViewController.swift */; };
 		CD99D9CE20BE94FB00A45569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD99D9CC20BE94FB00A45569 /* Main.storyboard */; };
@@ -17,7 +18,8 @@
 
 /* Begin PBXFileReference section */
 		CD3DB9CE20BEC5EF001B613A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CD491E8720BF9324001B5C8C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CD462D2D20BFEFC400EF9379 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CD51354120C01C6A0095B412 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		CD99D9C520BE94FB00A45569 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD99D9C820BE94FB00A45569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD99D9CA20BE94FB00A45569 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +42,7 @@
 		CD491E8920BF932B001B5C8C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CD491E8720BF9324001B5C8C /* Item.swift */,
+				CD462D2C20BFEFC400EF9379 /* DataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -48,6 +50,7 @@
 		CD491E8A20BF9335001B5C8C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CD51354120C01C6A0095B412 /* CategoryViewController.swift */,
 				CD99D9CA20BE94FB00A45569 /* ToDoListViewController.swift */,
 			);
 			path = Controller;
@@ -170,8 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD51354220C01C6A0095B412 /* CategoryViewController.swift in Sources */,
 				CD99D9CB20BE94FB00A45569 /* ToDoListViewController.swift in Sources */,
-				CD491E8820BF9324001B5C8C /* Item.swift in Sources */,
+				CD462D2E20BFEFC400EF9379 /* DataModel.xcdatamodeld in Sources */,
 				CD99D9C920BE94FB00A45569 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +368,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CD462D2C20BFEFC400EF9379 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CD462D2D20BFEFC400EF9379 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = CD462D2D20BFEFC400EF9379 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CD99D9BD20BE94FB00A45569 /* Project object */;
 }
