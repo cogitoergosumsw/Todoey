@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ToDoListViewController: UITableViewController {
+class ToDoListViewController: SwipeTableViewController {
     
     var toDoItems : Results<Item>?
     let realm = try! Realm()
@@ -24,8 +24,7 @@ class ToDoListViewController: UITableViewController {
         super.viewDidLoad()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        
-        
+
     }
     
     //MARK: - Tableview Datasource Methods
@@ -36,14 +35,10 @@ class ToDoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let item = toDoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
-            
-            //Ternary operator ==>
-            // value = condition ? valueIfTrue : valueIfFalse
-            
             cell.accessoryType = item.done ? .checkmark : .none
         } else {
             cell.textLabel?.text = "No Item Added"
@@ -70,12 +65,6 @@ class ToDoListViewController: UITableViewController {
         }
         
         tableView.reloadData()
-        //        context.delete(itemArray[indexPath.row])
-        //        itemArray.remove(at: indexPath.row)
-        
-        //        toDoItems[indexPath.row].done = !toDoItems[indexPath.row].done
-        
-        //        saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -129,6 +118,18 @@ class ToDoListViewController: UITableViewController {
         
         tableView.reloadData()
         
+    }
+    
+    override func updateModel(at indexPath: IndexPath) {
+        if let item = toDoItems?[indexPath.row] {
+            do {
+                try realm.write {
+                    realm.delete(item)
+                }
+            } catch {
+                print("Error deleting item: \(error)")
+            }
+        }
     }
     
 }
